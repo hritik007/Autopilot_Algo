@@ -1,0 +1,10 @@
+how to run this package
+
+-> sudo apt-get install ros-kinetic-navigation-tutorials 
+
+-> roscore
+
+-> rosrun robot_setup_tf tf_broadcaster
+
+-> rosrun robot_setup_tf tf_listener
+

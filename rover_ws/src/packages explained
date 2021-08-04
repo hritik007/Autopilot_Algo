@@ -1,0 +1,27 @@
+explaination of the packages in this work space
+
+1)robot_setup_tf : 
+
+this package converts lidar , wheel incoder's frame to base link frame
+		 
+eg .this means this package represents base_laser frame in terms of base_link frame
+
+working is below
+
+taking points in the "base_laser" frame and transforming them to the "base_link" frame. The first thing we need to do is to create a node that will be responsible for publishing the 			transforms in our system. Next, we'll have to create a node to listen to the transform data published over ROS and apply it to transform a point. We'll start by creating a package for the 		source code to live in and we'll give it a simple name like "robot_setup_tf"
+
+like ...
+base_laser: (1.00, 0.20. 0.00) -----> base_link: (1.10, 0.20, 0.20) at time 1567092603.49 
+
+timestamp is imp coz they may have RELATIVE MOTION BETWEEN THEM
+
+
+2) lidar :
+
+publish lidar data to a topic called senso_msgs/LaserScan
+currently we made a function inside the file to publish fake lidar values as we dont have real lidar as of now !
+
+
+3) odometry : 
+for publishing odometry information for the navigation stack. It covers both publishing the nav_msgs/Odometry message over ROS, and a 
+transform from a "odom" coordinate frame to a "base_link" coordinate frame over tf.
